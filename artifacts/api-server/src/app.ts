@@ -1,10 +1,9 @@
 // @ts-nocheck
-import express, { type Express } from "express";
 import express, { type Express, type Request, type Response } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
-import router from "./routes";
-import { logger } from "./lib/logger";
+import router from "./routes/index.js";
+import { logger } from "./lib/logger.js";
 
 // Handle module interop for pino-http
 const pinoMiddleware = typeof pinoHttp === "function" ? pinoHttp : (pinoHttp as any).default || pinoHttp;
